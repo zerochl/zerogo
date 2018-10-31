@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "AnyVideo-Go/routers"
-	_ "AnyVideo-Go/initial"
+	_ "zerogo/routers"
+	_ "zerogo/initial"
 	"github.com/astaxie/beego"
 	"runtime"
 )
