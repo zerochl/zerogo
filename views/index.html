@@ -1,0 +1,330 @@
+﻿{{template "public/header.html" .}}
+    <!-- Swiper -->
+    <div class="swiper-container gallery-top">
+        <div class="swiper-wrapper">
+            {{range .CarouselPic}}
+            <div class="swiper-slide">
+                <a href="/view?u={{.Value}}" target="_blank">
+                    <img src="{{.Image}}"/>
+                </a>
+            </div>
+            {{end}}
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="ui hidden divider"></div>
+
+    <div class="ui container">
+        <div class="row relative">
+            <h2 class="ui dividing header green">
+                <i class="green yelp icon item"></i>
+                综艺节目
+            </h2>
+            <button class="ui green button right-absolute refresh" value="5" category="recommends" page="1"><i class="refresh icon"></i>换一批</button>
+        </div>
+        <div class="ui five column doubling grid">
+            {{range $index, $elem := .Recommend}}
+            {{if lt $index 5}}
+            <div class="column videoItem">
+                <div class="ui fluid link card">
+                    <a class="image videoUrl" href="/view?u={{$elem.Value}}" target="_blank">
+                        <img src="{{$elem.Image}}" alt="" class="videoImage"/>
+                    </a>
+                    <div class="content">
+                        <a class="videoTitle" target="_blank">{{$elem.Title}}</a>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+            {{end}}
+        </div>
+    </div>
+
+    <div class="ui hidden divider"></div>
+
+    <div class="ui container">
+        <div class="row relative">
+            <h2 class="ui dividing header green">
+                <i class="reddit yelp icon item"></i>
+                最新电影
+            </h2>
+            <button class="ui green button right-absolute refresh" value="10" category="movies" page="1"><i class="refresh icon"></i>换一批</button>
+        </div>
+        <div class="ui five column doubling grid">
+            {{range $index, $elem := .Movie}}
+            {{if lt $index 10}}
+            <div class="column videoItem">
+                <div class="ui fluid link card">
+                    <a class="image videoUrl" href="/view?u={{$elem.Value}}" target="_blank">
+                        <img src="{{$elem.Image}}" alt="" class="videoImage"/>
+                    </a>
+                    <div class="content">
+                        <a class="videoTitle" target="_blank">{{$elem.Title}}</a>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+            {{end}}
+        </div>
+    </div>
+
+    <div class="ui hidden divider"></div>
+
+    <div class="ui container">
+        <div class="ui stackable grid">
+            <div class="twelve wide column">
+                <div class="row relative">
+                    <h2 class="ui dividing header green">
+                        <i class="yelp icon"></i>
+                        电视剧
+                    </h2>
+                    <button class="ui green button right-absolute refresh" value="8" category="tvHots" page="1"><i class="refresh icon"></i>换一批
+                    </button>
+                </div>
+                <div class="ui four column doubling grid">
+                    {{range $index, $elem := .TV}}
+                    {{if lt $index 8}}
+                    <div class="column videoItem">
+                        <div class="ui fluid link card">
+                            <a class="image videoUrl" href="/view?u={{$elem.Value}}" target="_blank">
+                                <img src="{{$elem.Image}}" alt="" class="videoImage"/>
+                            </a>
+                            <div class="content">
+                                <a class="videoTitle" target="_blank">{{$elem.Title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    {{end}}
+                    {{end}}
+                </div>
+            </div>
+            <div class="four wide computer only column">
+                <h2 class="ui dividing header olive">
+                    <i class="modx icon"></i>
+                    排行榜
+                </h2>
+                <div class="ui segments">
+                    {{range $index, $elem := .TVTop}}
+                    {{if lt $index 10}}
+                    <div class="ui red segment">
+                        <a href="/view?u={{$elem.Value}}" target="_blank">{{$elem.Title}}</a>
+                    </div>
+                    {{end}}
+                    {{end}}
+                </div>
+            </div>
+        </div>
+
+        <div class="ui hidden divider"></div>
+
+        <div class="ui container">
+            <div class="row relative">
+                <h2 class="ui dividing header green">
+                    <i class="reddit yelp icon item"></i>
+                    熊猫TV
+                </h2>
+                <button class="ui green button right-absolute refresh" value="10" category="lives" page="1"><i class="refresh icon"></i>换一批
+                </button>
+            </div>
+            <div class="ui five column doubling grid">
+                {{range $index, $elem := .Live}}
+                {{if lt $index 10}}
+                <div class="column videoItem">
+                    <div class="ui fluid link card">
+                        <a class="image videoUrl" href="/view?u={{$elem.Value}}" target="_blank">
+                            <img src="{{$elem.Image}}" alt="" class="videoImage"/>
+                        </a>
+                        <div class="content">
+                            <a class="videoTitle" target="_blank">{{$elem.Title}}</a>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+                {{end}}
+            </div>
+        </div>
+
+        <div class="ui hidden divider"></div>
+
+        <div class="ui container">
+            <div class="row relative">
+                <h2 class="ui dividing header green">
+                    <i class="reddit yelp icon item"></i>
+                    热血动漫
+                </h2>
+                <button class="ui green button right-absolute refresh" value="10" category="animeHots" page="1"><i class="refresh icon"></i>换一批
+                </button>
+            </div>
+            <div class="ui five column doubling grid">
+                {{range $index, $elem := .Cartoon}}
+                {{if lt $index 10}}
+                <div class="column videoItem">
+                    <div class="ui fluid link card">
+                        <a class="image videoUrl" href="/view?u={{$elem.Value}}" target="_blank">
+                            <img src="{{$elem.Image}}" alt="" class="videoImage"/>
+                        </a>
+                        <div class="content">
+                            <a class="videoTitle" target="_blank">{{$elem.Title}}</a>
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+                {{end}}
+            </div>
+        </div>
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+            <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">源码下载</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item" target="_blank">Github</a>
+                        <a href="#" class="item" target="_blank">码云</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">相关文档</h4>
+                    <div class="ui inverted link list">
+                        <a href="http://projects.spring.io/spring-boot/" class="item" target="_blank">Spring Boot</a>
+                        <a href="http://projects.spring.io/spring-security/" class="item" target="_blank">Spring
+                            Security</a>
+                        <a href="https://jsoup.org/" class="item" target="_blank">Jsoup</a>
+                        <a href="http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html" class="item"
+                           target="_blank">Thymeleaf 3.0</a>
+                        <a href="#" class="item" target="_blank">简书</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">其他项目</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item" target="_blank">Any Security</a>
+                        <a href="#" class="item" target="_blank">Any
+                            Chat</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">开源声明</h4>
+                    <p>本站资源来源于互联网解析，仅供学习参考，请勿用于商业用途，违者必究！</p>
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui red button"><i class="heart icon"></i> Like</div>
+                        <a class="ui basic red left pointing label" href="#"
+                           target="_blank">
+                            1,024
+                        </a>
+                    </div>
+                    <div class="ui labeled button" tabindex="0">
+                        <div class="ui basic blue button"><i class="fork icon"></i> Forks</div>
+                        <a class="ui basic left pointing blue label" href="#"
+                           target="_blank">
+                            1,024
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <img src="https://upload-images.jianshu.io/upload_images/3424642-e507ac74fe4079e8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"
+                 class="ui centered mini image">
+            <div class="ui horizontal inverted small divided link list">
+                <a class="item disabled" href="#">Copyright © 2016 - 2017. All Rights Reserved</a>
+                <a class="item disabled" href="#">鄂ICP备16007917号</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 申请友情链接遮罩层 -->
+<div class="ui page dimmer">
+    <div class="content">
+        <div class="center">
+            <h2 class="ui inverted icon header">
+                <i class="mail icon"></i>
+                申请友情链接，请将贵站网址发到以下邮箱
+                <div class="sub header">zerochl0912@gmail.com</div>
+            </h2>
+        </div>
+    </div>
+</div>
+<link href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.js"></script>
+<script>
+
+    /** 初始化遮罩层 */
+    $("#applyJoin").click(function () {
+        $(".ui.page.dimmer").dimmer('show');
+    });
+
+    <!-- 首页轮播设置 -->
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
+    });
+</script>
+
+<!--<script th:inline="javascript">-->
+<!--var data = [[${recommends}]]-->
+<!--alert(data[0].image)-->
+<!--</script>-->
+<script type="javascript">
+    <!-- 加载友情链接 -->
+//    var friendLinkAPI = "/link/list";
+//    $.get(friendLinkAPI, function (data) {
+//        for (var i = 0; i < data.length; i++) {
+//            var link = $("<a class='ui red tag label' target='_blank'></a>");
+//            link.attr("href", data[i].domain);
+//            link.text(data[i].name);
+//            $("#friendLinks").append(link);
+//        }
+//    });
+
+    /** "换一批" 功能 */
+    $(".refresh").click(
+        function () {
+            var size = $(this).val();
+            var category = $(this).attr("category");
+            var page = $(this).attr("page");
+            var data = null;
+            if(category == "recommends"){
+                data = {{.Recommend}};
+            }else if(category == "lives"){
+                data = {{.Live}};
+            }else if(category == "tvHots"){
+                data = {{.TV}};
+            }else if(category == "movies"){
+                data = {{.Movie}};
+            }else if(category == "cartoon"){
+                data = {{.Cartoon}};
+            }
+            var maxPage = Number(data.length)%Number(size) > 0 ? Number(Number(Number(data.length)/Number(size)).toFixed(0)) + Number(1) : Number(Number(data.length)/Number(size)).toFixed(0);
+            var newPage = Number(page) + Number(1) > Number(maxPage) ? 1 : Number(page) + Number(1);
+            $(this).attr("page",newPage);
+            for(var i = 0;i < size;i++){
+                var videoBox = $(this).parent().next().find(".videoItem");
+                if(Number(i) + (Number(newPage) - Number(1)) * Number(size) >= Number(data.length)){
+                    //no data for this
+                    videoBox.eq(i).find(".videoImage").eq(0).attr("src", "");
+                    videoBox.eq(i).find(".videoTitle").eq(0).text("");
+                    videoBox.eq(i).find(".videoUrl").eq(0).attr("href", "");
+                    break;
+                }
+                videoBox.eq(i).find(".videoImage").eq(0).attr("src", data[Number(i) + (Number(newPage) - Number(1)) * Number(size)].Image);
+                videoBox.eq(i).find(".videoTitle").eq(0).text(data[Number(i) + (Number(newPage) - Number(1)) * Number(size)].Title);
+//                videoBox.eq(i).find(".videoUrl").eq(0).attr("href", data[Number(i) + (Number(newPage) - Number(1)) * Number(size)].value);
+                videoBox.eq(i).find(".videoUrl").eq(0).attr("href", "/view?u=" + (data[Number(i) + (Number(newPage) - Number(1)) * Number(size)].value));
+            }
+        }
+    );
+</script>
+</body>
+
+</html>

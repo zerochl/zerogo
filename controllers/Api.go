@@ -14,7 +14,7 @@ func (c *ApiController) GetVideoParseInfo(){
 	sourceUrl := utils.DecodeUrl(c.GetString("v"))
 	log.Println("url:",sourceUrl)
 	//source := ParserManager.Parse(sourceUrl)
-	c.Data["json"] = ""
+	c.Data["json"] = "{\"test\":123}"
 	c.ServeJSON()
 }
 

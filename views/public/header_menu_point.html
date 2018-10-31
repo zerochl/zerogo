@@ -1,0 +1,19 @@
+<div class="ui large secondary pointing menu">
+    <a class="toc item">
+        <i class="sidebar icon"></i>
+    </a>
+    <a href="/" class="item">首页</a>
+    <a href="/see" class="item">瞄一瞄</a>
+    <a href="/search" class="item">搜索</a>
+    <a href="/parse" class="item">解析</a>
+    <a href="/tip" class="item">打赏</a>
+    <a href="/author" class="item">作者</a>
+    <!--<a href="https://github.com/ChinaSilence/any-video" class="item" target="_blank">Github</a>-->
+    <div class="right item">
+        {{if .user}}
+        <a class="ui inverted red button" href="/user">个人中心</a>
+        {{else}}
+        <a class="ui inverted olive button" href="/login">登录</a>
+        {{end}}
+    </div>
+</div>

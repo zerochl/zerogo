@@ -2,9 +2,9 @@ package redisIO
 import (
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/cache"
-	"AnyVideo-Go/caches"
+	"zerogo/caches"
 	"errors"
-	"AnyVideo-Go/utils"
+	"zerogo/utils"
 	"log"
 )
 
@@ -55,7 +55,7 @@ func Set(key,val string, expire int64) error {
 		log.Printf("%v", err)
 	}
 
-	return err;
+	return err
 }
 
 func Hset(key string,field,val string, expire int64) error {

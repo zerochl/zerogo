@@ -7,11 +7,10 @@ import (
 )
 
 func init() {
-	beego.Router("/", &controllers.MainController{})
-	beego.Router("/view",&controllers.MainController{},"get:SourceDetail")
-
 	beego.Router("/api/episode",&controllers.ApiController{},"get:GetEpisodes")
 	beego.Router("/api/video",&controllers.ApiController{},"get:GetVideoParseInfo")
+	beego.Router("/", &controllers.MainController{})
+	//beego.Router("/view",&controllers.MainControll、er{},"get:SourceDetail")
 
 	var FilterMethod = func(ctx *context.Context) {
 		if ctx.Input.Query("_method") != "" && ctx.Input.IsPost() {
