@@ -22,4 +22,5 @@
 **/*.iml
 **/build
 **/report
+**conf
 
